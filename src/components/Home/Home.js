@@ -13,12 +13,16 @@ const infos = [
     skills: "My Experences: CSS,HTML,JavaScript,ReactJS,NextJS,TypeScript",
   },
 ];
-const Home = () => {
+const Home = ({ setMode, mode }) => {
   console.log(indigo);
   return (
     <div className="root">
-      <NavBar />
-      <Typography color="#aa55fa" variant="h3" sx={{ textAlign: "start",mt: 2 }}>
+      <NavBar setMode={setMode} mode={mode} />
+      <Typography
+        color="#aa55fa"
+        variant="h3"
+        sx={{ textAlign: "start", mt: 2 }}
+      >
         <Typewriter
           options={{
             strings: [
