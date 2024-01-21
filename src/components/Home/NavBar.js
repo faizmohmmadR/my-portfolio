@@ -6,6 +6,7 @@ import {
   Container,
   Menu,
   MenuItem,
+  Switch,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -19,7 +20,7 @@ const StyledToolbar = styled(Toolbar)({
   alignItems: "center",
 });
 
-const NavBar = () => {
+const NavBar = ({ setMode, mode }) => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <AppBar position="sticky">
@@ -81,7 +82,21 @@ const NavBar = () => {
             <MenuItem>Skills</MenuItem>
           </Menu>
 
-          <Avatar src="./myPic/mypic.jpeg" />
+          <Box
+            sx={{
+              width: "10%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Avatar src="./myPic/mypic.jpeg" />
+            <Switch
+              onChange={() => {
+                setMode(mode === "dark" ? "light" : "dark");
+              }}
+            />
+          </Box>
         </StyledToolbar>
       </Container>
     </AppBar>
