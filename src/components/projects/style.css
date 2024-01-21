@@ -1,0 +1,43 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 0px auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  /* border: 2px solid red; */
+}
+
+.project-img {
+  width: 65vw;
+  height: 60vh;
+  /* outline: 2px solid rebeccapurple; */
+}
+
+.sub-image-container {
+  display: flex;
+  /* outline: 2px solid rebeccapurple; */
+  
+}
+
+.sub-image {
+  margin-top: 10px;
+  width: 10.5vw;
+  height: 15vh;
+  margin-right: 3px;
+  /* outline: 2px solid rebeccapurple; */
+}
+
+/* .title{
+    position: relative;
+    top: 30px;
+    color: hsl(0, 0%, 5%);
+    text-transform: uppercase;
+    padding: 10px;
+} */
+
+.title {
+  text-transform: uppercase;
+  padding: 30px;
+}
