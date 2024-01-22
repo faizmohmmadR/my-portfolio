@@ -13,6 +13,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 import React, { useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -22,6 +23,8 @@ const StyledToolbar = styled(Toolbar)({
 
 const NavBar = ({ setMode, mode }) => {
   const [openMenu, setOpenMenu] = useState(false);
+
+  const navigate = useNavigate();
   return (
     <AppBar position="sticky">
       <Container>
@@ -48,13 +51,89 @@ const NavBar = ({ setMode, mode }) => {
             F.M
           </Typography>
 
-          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>About</MenuItem>
-            <MenuItem>Contact</MenuItem>
-            <MenuItem>Projects</MenuItem>
-            <MenuItem>CV</MenuItem>
-            <MenuItem>Skills</MenuItem>
+          <Box
+            sx={{ display: { xs: "none", sm: "flex" } }}
+            bgcolor={"Background.default"}
+            color={"text.primary"}
+          >
+            <MenuItem>
+              <NavLink
+                to="/home"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Home
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/about"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                About
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/contact"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Contact
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/projects"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Projects
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/cv"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Resume
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/skills"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Skills
+              </NavLink>
+            </MenuItem>
           </Box>
           <Menu
             id="demo-positioned-menu"
@@ -74,28 +153,99 @@ const NavBar = ({ setMode, mode }) => {
               horizontal: "left",
             }}
           >
-            <MenuItem>Home</MenuItem>
-            <MenuItem>About</MenuItem>
-            <MenuItem>Contact</MenuItem>
-            <MenuItem>Projects</MenuItem>
-            <MenuItem>CV</MenuItem>
-            <MenuItem>Skills</MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/home"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Home
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/about"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                About
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/contact"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Contact
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/projects"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Projects
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/cv"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Resume
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                to="/skills"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "#aa55fa",
+                    textDecoration: "none",
+                  };
+                }}
+              >
+                Skills
+              </NavLink>
+            </MenuItem>
           </Menu>
 
           <Box
             sx={{
-              width: "10%",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
             }}
           >
-            <Avatar src="./myPic/mypic.jpeg" />
             <Switch
               onChange={() => {
                 setMode(mode === "dark" ? "light" : "dark");
               }}
             />
+            <Avatar src="./myPic/mypic.jpeg" />
           </Box>
         </StyledToolbar>
       </Container>
