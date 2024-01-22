@@ -1,6 +1,16 @@
 import { Box, Grid, LinearProgress, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import "./style.css";
+import "./skills.css";
+import styled from "@emotion/styled";
+
+const StyledBox = styled(Box)({
+  width: "70vw",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: 10,
+});
 
 const Progress = ({ skill, value }) => {
   const [progress, setProgress] = useState(1);
@@ -9,7 +19,7 @@ const Progress = ({ skill, value }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
-        if (oldProgress == 100) {
+        if (oldProgress == 101) {
           return 0;
         }
         const diff = Math.random() * 1;
@@ -25,17 +35,17 @@ const Progress = ({ skill, value }) => {
     };
   }, []);
   return (
-    <>
-      <Typography className="title">{skill}</Typography>
+    <StyledBox sx={{ width: { xs: "100vw", sm: "70vw" } }} >
+      <Typography color='primary' sx={{ width: { xs: "35%", sm: "20%" } }}>{skill}</Typography>
       <LinearProgress
         value={progress}
         variant="determinate"
-        sx={{ width: "50vw", padding: "10px" }}
+        sx={{ width: "75%", padding: "10px" }}
       />
-      <Typography variant="body1" color='primary' className="title" ml={2}>
+      <Typography variant="body1" color="primary" ml={2} width="10%">
         {Math.ceil(progress)}%
       </Typography>
-    </>
+    </StyledBox>
   );
 };
 

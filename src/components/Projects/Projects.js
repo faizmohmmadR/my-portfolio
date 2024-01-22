@@ -30,7 +30,6 @@ import turest_home from "../../assets/images/turest/Screenshot from 2024-01-19 1
 import turest_page from "../../assets/images/turest/tures-pages.png";
 import turest_page1 from "../../assets/images/turest/turest-pages.png";
 
-
 const projects = [
   {
     title: "Car Store",
@@ -76,11 +75,7 @@ const projects = [
     title: "Afghan Turest ",
     discriptin: "Car Store is the only project in here",
     image: turest_home,
-    images: [
-      { src: turest_home },
-      { src: turest_page },
-      { src: turest_page1 },
-    ],
+    images: [{ src: turest_home }, { src: turest_page }, { src: turest_page1 }],
   },
 ];
 
@@ -90,7 +85,13 @@ const Projects = () => {
     <Grid container>
       {projects.map((project, index) => {
         return (
-          <Paper item key={index} className="center">
+          <Box
+            item
+            key={index}
+            className="center"
+            bgcolor={"Background.default"}
+            color={"text.primary"}
+          >
             <Typography className="title" variant="h3" color="primary">
               {project.title}
             </Typography>
@@ -114,7 +115,7 @@ const Projects = () => {
                 );
               })}
             </Box>
-          </Paper>
+          </Box>
         );
       })}
     </Grid>
