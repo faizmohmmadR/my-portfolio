@@ -1,9 +1,10 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import React, { useState } from "react";
-import "./style.css";
-import img from "../../assets/images/ai.png";
-import img2 from "../../assets/images/programming.png";
-import img3 from "../../assets/images/robotics.png";
+import { motion } from "framer-motion";
+import "./project.css";
+// import img from "../../assets/images/ai.png";
+// import img2 from "../../assets/images/programming.png";
+// import img3 from "../../assets/images/robotics.png";
 
 import car_home from "../../assets/images/car-stor/car-home.png";
 import car_dark from "../../assets/images/car-stor/car-dark-mode.png";
@@ -81,44 +82,72 @@ const projects = [
 
 const Projects = () => {
   const [imgUrl, setUrl] = useState();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
+  };
+
   return (
-    <Grid container>
-      {projects.map((project, index) => {
-        return (
-          <Box
-            item
-            key={index}
-            className="center"
-            bgcolor={"Background.default"}
-            color={"text.primary"}
-          >
-            <Typography className="title" variant="h3" color="primary">
-              {project.title}
-            </Typography>
-            <Box
-              className="project-img"
-              component="img"
-              src={imgUrl || project.image}
-            ></Box>
-            <Box className="sub-image-container">
-              {project.images.map((image, index) => {
-                return (
-                  <Box
-                    key={index}
-                    className="sub-image"
-                    component="img"
-                    onClick={(e) => {
-                      setUrl(e.target.src);
-                    }}
-                    src={image.src}
-                  ></Box>
-                );
-              })}
-            </Box>
-          </Box>
-        );
-      })}
-    </Grid>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
+      <motion.div variants={itemVariants}>
+        <Grid container>
+          {projects.map((project, index) => {
+            return (
+              <Box
+                item
+                key={index}
+                className="center"
+                bgcolor={"Background.default"}
+                color={"text.primary"}
+              >
+                <Typography className="title" variant="h5" color="primary">
+                  {project.title}
+                </Typography>
+                <Box
+                  className="project-img"
+                  component="img"
+                  src={imgUrl || project.image}
+                  sx={{
+                    height: { sm: "60vh", md: "60vh", lg: "60vh", xs: "50vh" },
+                    width: { xs: "95vw", sm: "90vw", md: "80vw", lg: "70vw" },
+                  }}
+                ></Box>
+                <Box className="sub-image-container">
+                  {project.images.map((image, index) => {
+                    return (
+                      <Box
+                        key={index}
+                        className="sub-image"
+                        component="img"
+                        onClick={(e) => {
+                          setUrl(e.target.src);
+                        }}
+                        sx={{
+                          height: {
+                            xs: "15vh",
+                            sm: "10vh",
+                            md: "12vh",
+                            lg: "15vh",
+                          },
+                          borderRadius: "15px",
+                        }}
+                        src={image.src}
+                      ></Box>
+                    );
+                  })}
+                </Box>
+              </Box>
+            );
+          })}
+        </Grid>
+      </motion.div>
+    </motion.div>
   );
 };
 

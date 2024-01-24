@@ -6,14 +6,14 @@ import {
   Container,
   Menu,
   MenuItem,
-  Switch,
   Toolbar,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import NightlightIcon from "@mui/icons-material/Nightlight";
 
 import React, { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -24,9 +24,19 @@ const StyledToolbar = styled(Toolbar)({
 const NavBar = ({ setMode, mode }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
-  const navigate = useNavigate();
+  let color = "white";
+
+  if (mode === "dark") {
+    color = "white";
+  } else {
+    color = "black";
+  }
+
   return (
-    <AppBar position="sticky">
+    <AppBar
+      position="sticky"
+      sx={{ color: "#61dafb", backgroundColor: "#2b0b3a", opacity: "0.8" }}
+    >
       <Container>
         <StyledToolbar>
           <MenuItem
@@ -48,20 +58,20 @@ const NavBar = ({ setMode, mode }) => {
             sx={{ display: { xs: "block", md: "none" } }}
             variant="h6"
           >
-            F.M
+            Rahmdel
           </Typography>
 
           <Box
             sx={{ display: { xs: "none", sm: "flex" } }}
             bgcolor={"Background.default"}
-            color={"text.primary"}
+            color={"#61dafb"}
           >
             <MenuItem>
               <NavLink
-                to="/home"
+                to="/"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -74,7 +84,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/about"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -87,7 +97,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/contact"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -100,7 +110,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/projects"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -113,7 +123,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/cv"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -126,7 +136,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/skills"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -155,10 +165,10 @@ const NavBar = ({ setMode, mode }) => {
           >
             <MenuItem>
               <NavLink
-                to="/home"
+                to="/"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -171,7 +181,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/about"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -184,7 +194,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/contact"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -197,7 +207,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/projects"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -210,7 +220,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/cv"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -223,7 +233,7 @@ const NavBar = ({ setMode, mode }) => {
                 to="/skills"
                 style={({ isActive }) => {
                   return {
-                    color: isActive ? "white" : "#aa55fa",
+                    color: isActive ? "white" : "#61dafb",
                     textDecoration: "none",
                   };
                 }}
@@ -232,21 +242,21 @@ const NavBar = ({ setMode, mode }) => {
               </NavLink>
             </MenuItem>
           </Menu>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Switch
-              onChange={() => {
-                setMode(mode === "dark" ? "light" : "dark");
-              }}
-            />
+          <Box>
             <Avatar src="./myPic/mypic.jpeg" />
           </Box>
+
+          <NightlightIcon
+            onClick={() => {
+              setMode(mode === "dark" ? "light" : "dark");
+            }}
+            sx={{
+              ":hover": { cursor: "pointer" },
+
+              color: color,
+              display: "none",
+            }}
+          />
         </StyledToolbar>
       </Container>
     </AppBar>

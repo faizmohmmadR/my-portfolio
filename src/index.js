@@ -10,14 +10,16 @@ import Home from "./components/Home/Home";
 import CV from "./components/CV/CV";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-// import './index.css'
+import "./index.css";
+import Home2 from "./components/Home/Home2";
+import CombineHome from "./components/Home/CombineHome";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<CombineHome />} />
           <Route path="/cv" element={<CV />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
