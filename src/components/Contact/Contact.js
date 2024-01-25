@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const RootContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(4),
-  height: "73vh",
+  height: "81vh",
 }));
 
 const Heading = styled(Typography)(({ theme }) => ({
@@ -56,7 +56,7 @@ const Contact = () => {
       >
         <motion.div variants={itemVariants}>
           <Box>
-            <Heading variant="h4" gutterBottom>
+            <Heading variant="h2" gutterBottom>
               Contact Me
             </Heading>
             <Form onSubmit={handleSubmit}>

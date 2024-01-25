@@ -1,0 +1,17 @@
+export const SkillsList = [
+  { name: "HTML5", value: 99 },
+  { name: "CSS3", value: 99 },
+  { name: "Responsive", value: 100 },
+  { name: "JavaScript", value: 90 },
+  { name: "TypeScript", value: 80 },
+  { name: "Rest APIs", value: 93 },
+  { name: "React JS", value: 95 },
+  { name: "NextJS", value: 90 },
+  { name: "Redux", value: 95 },
+  { name: "ReactQuery", value: 94 },
+  { name: "MUI", value: 92 },
+  { name: "Git", value: 98 },
+  { name: "Github/Gitlab", value: 98 },
+  { name: "Linux", value: 85 },
+  { name: "Clean Code", value: 97 },
+];

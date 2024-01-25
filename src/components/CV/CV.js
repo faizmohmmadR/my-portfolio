@@ -1,4 +1,4 @@
-import { Box, Button, Container, Paper, Typography } from "@mui/material";
+import { Box, Container, Paper } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
@@ -35,7 +35,7 @@ const CV = () => {
               flexDirection: "column",
               justifyContent: "space-between",
               alignItems: "center",
-              height: { lg: "95vh", xs: "100vh" },
+              height: { xs: "73vh", sm: "95vh" },
               color: "#61dafb",
             }}
           >
@@ -43,8 +43,8 @@ const CV = () => {
               component="iframe"
               src="/pdf/junior-front-end-developer.pdf"
               sx={{
-                height: { lg: "100%", md: "100%", sm: "100%", xs: "100%" },
-                width: "50%",
+                height: { xs: "100vh", sm: "100%" },
+                width: { xs: "100%", sm: "50%" },
               }}
             ></Paper>
 
@@ -55,16 +55,16 @@ const CV = () => {
             >
               <FileDownloadIcon
                 sx={{
-                  backgroundColor: "#333",
-                  width: "5vw",
-                  height: "10vh",
+                  backgroundColor: "green",
+                  width: { xs: "10vw", sm: "5vw" },
+                  height: { xs: "5vh", lg: "10vh" },
                   borderRadius: "50%",
                   color: "white",
-                  position: 'relative',
-                  bottom: '100px',
-                  ":hover":{
-                    opacity: '0.8'
-                  }
+                  position: "relative",
+                  bottom: "100px",
+                  ":hover": {
+                    opacity: "0.8",
+                  },
                 }}
               />
             </a>

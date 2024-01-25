@@ -1,27 +1,14 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Grid,
-  Avatar,
-  Container,
-} from "@mui/material";
+import { Box, Typography, Grid, Container } from "@mui/material";
 import myImg from "../../assets/about.png";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import Home2 from "./Home2";
 import "./home.css";
-const AvatarImage = styled(Avatar)(({ theme }) => ({
-  width: theme.spacing(20),
-  height: theme.spacing(20),
-}));
 
 const RootContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(4),
-  height: "100vh",
 }));
 
 const containerVariants = {
@@ -53,7 +40,7 @@ const Home = () => {
         >
           <Grid item lg={7} xs={12} sm={12} md={6}>
             <motion.div variants={itemVariants}>
-              <Box md={7} className="home-header">
+              <Box md={7} className="home-header white-color">
                 <h1 style={{ paddingBottom: 15 }} className="heading">
                   Hi There!{" "}
                   <span className="wave" role="img" aria-labelledby="wave">
@@ -66,10 +53,20 @@ const Home = () => {
                   <strong className="main-name"> Faiz Mohammad</strong>
                 </h1>
               </Box>
-              <Typography variant="h6" sx={{ marginTop: "10%" }}>
+              <Typography
+                sx={{
+                  marginTop: "10%",
+                  fontSize: { xs: "12px", sm: "14px", md: "16px", lg: "22px" },
+                }}
+              >
                 <Typewriter
                   options={{
-                    strings: ["Front-End Web Enginner"],
+                    strings: [
+                      "Front-End Developer",
+                      "Showcase Your Success",
+                      "Design, Impress, Inspire",
+                      "Crafting Digital Stories",
+                    ],
                     autoStart: true,
                     loop: true,
                     deleteSpeed: 50,

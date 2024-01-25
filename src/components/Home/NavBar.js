@@ -35,7 +35,7 @@ const NavBar = ({ setMode, mode }) => {
   return (
     <AppBar
       position="sticky"
-      sx={{ color: "#61dafb", backgroundColor: "#2b0b3a", opacity: "0.8" }}
+      sx={{ color: "#61dafb", backgroundColor: "#2b0b3a", opacity: "0.9" }}
     >
       <Container>
         <StyledToolbar>
