@@ -1,17 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skils";
-import Home from "./components/Home/Home";
 import CV from "./components/CV/CV";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import "./index.css";
-import Home2 from "./components/Home/Home2";
 import CombineHome from "./components/Home/CombineHome";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

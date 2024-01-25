@@ -1,29 +1,21 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Grid,
-  Avatar,
-  Container,
-} from "@mui/material";
+import { Typography, Grid, Avatar, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import Typewriter from "typewriter-effect";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 
-import EmailIcon from "@mui/icons-material/Email";
+// import EmailIcon from "@mui/icons-material/Email";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const AvatarImage = styled(Avatar)(({ theme }) => ({
-  width: theme.spacing(20),
-  height: theme.spacing(20),
+  width: theme.spacing(30),
+  height: theme.spacing(30),
 }));
 
 const RootContainer = styled(Container)(({ theme }) => ({
@@ -60,16 +52,21 @@ const Home2 = () => {
         >
           <Grid item xs={12} sm={12} md={9} lg={8} className="grid-center">
             <motion.div variants={itemVariants}>
-              <h1 style={{ fontSize: "2.6em" }}>
+              <Typography
+                sx={{ fontSize: { xs: "1.5em", sm: "2.6em" } }}
+                className="white-color"
+              >
                 LET ME <span className="purple"> INTRODUCE </span> MYSELF
-              </h1>
-              <p className="home-about-body">
+              </Typography>
+              <p className="home-about-body white-color">
                 I fell in love with programming and I have at least learnt
                 something, I think… 🤷‍♂️
                 <br />
                 <br />I am fluent in classics like
                 <i>
-                  <b className="purple"> php , Javascript and Go. </b>
+                  <b className="purple">
+                    Javascript,TypeScript,ReactJS and NextJS.{" "}
+                  </b>
                 </i>
                 <br />
                 <br />
@@ -81,7 +78,7 @@ const Home2 = () => {
                 <br />
                 <br />
                 Whenever possible, I also apply my passion for developing
-                products with <b className="purple">Node.js</b> and
+                products with <b className="purple">JavaScript</b> and
                 <i>
                   <b className="purple">
                     {" "}
@@ -102,17 +99,14 @@ const Home2 = () => {
           </Grid>
         </Grid>
 
-        <Grid lg={12} className="home-about-social">
+        <Grid lg={12} textAlign={"center"} className="home-about-social">
           <Typography variant="h4" paddingTop={2}>
             FIND ME ON
           </Typography>
           <Typography pb={2}>
             Feel free to <span className="purple">connect </span>with me
           </Typography>
-          <ul
-            className="home-about-social-links"
-            style={{ marginRight: "40px" }}
-          >
+          <ul className="home-about-social-links">
             <li className="social-icons">
               <a
                 href="https://github.com/faizmohmmadR"
@@ -132,12 +126,20 @@ const Home2 = () => {
               </a>
             </li>
             <li className="social-icons">
-              <a href="#" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/faizmohmmadR"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <InstagramIcon className="icon-colour" />
               </a>
             </li>
             <li className="social-icons">
-              <a href="#" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/faizmohmmadR"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FacebookIcon className="icon-colour" />
               </a>
             </li>

@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./project.css";

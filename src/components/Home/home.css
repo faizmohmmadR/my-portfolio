@@ -127,3 +127,7 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+.white-color {
+  color: white;
+}
