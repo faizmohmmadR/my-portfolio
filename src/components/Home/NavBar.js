@@ -4,6 +4,7 @@ import {
   Avatar,
   Box,
   Container,
+  IconButton,
   Menu,
   MenuItem,
   Toolbar,
@@ -13,7 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -22,7 +23,15 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const NavBar = ({ setMode, mode }) => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+
+  const handleClose = (e) => {
+    setAnchorEl(null);
+  };
 
   let color = "white";
 
@@ -39,27 +48,31 @@ const NavBar = ({ setMode, mode }) => {
     >
       <Container>
         <StyledToolbar>
-          <MenuItem
-            onClick={() => {
-              setOpenMenu(true);
-            }}
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={handleClick}
             sx={{ display: { xs: "block", sm: "none" }, mt: 1 }}
           >
             <MenuIcon />
-          </MenuItem>
-          <Typography
-            sx={{ display: { xs: "none", md: "block" } }}
-            variant="h6"
+          </IconButton>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "#61dafb",
+              fontWeight: "bold",
+            }}
+            to="/"
           >
-            Faiz Mohammad
-          </Typography>
-
-          <Typography
-            sx={{ display: { xs: "block", md: "none" } }}
-            variant="h6"
-          >
-            Rahmdel
-          </Typography>
+            <Typography
+              sx={{ display: { xs: "none", md: "block" } }}
+              variant="h6"
+            >
+              Faiz Mohammad
+            </Typography>
+          </Link>
 
           <Box
             sx={{ display: { xs: "none", sm: "flex" } }}
@@ -146,24 +159,12 @@ const NavBar = ({ setMode, mode }) => {
             </MenuItem>
           </Box>
           <Menu
-            id="demo-positioned-menu"
-            open={openMenu}
-            onClick={() => {
-              setOpenMenu(false);
-            }}
-            onClose={() => {
-              setOpenMenu(false);
-            }}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            PaperProps={{ style: { backgroundColor: "#2b0b3a" } }}
           >
-            <MenuItem>
+            <MenuItem color="inherit" onClick={handleClose}>
               <NavLink
                 to="/"
                 style={({ isActive }) => {
@@ -176,7 +177,7 @@ const NavBar = ({ setMode, mode }) => {
                 Home
               </NavLink>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleClose}>
               <NavLink
                 to="/about"
                 style={({ isActive }) => {
@@ -189,7 +190,7 @@ const NavBar = ({ setMode, mode }) => {
                 About
               </NavLink>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleClose}>
               <NavLink
                 to="/contact"
                 style={({ isActive }) => {
@@ -202,7 +203,7 @@ const NavBar = ({ setMode, mode }) => {
                 Contact
               </NavLink>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleClose}>
               <NavLink
                 to="/projects"
                 style={({ isActive }) => {
@@ -215,7 +216,7 @@ const NavBar = ({ setMode, mode }) => {
                 Projects
               </NavLink>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleClose}>
               <NavLink
                 to="/cv"
                 style={({ isActive }) => {
@@ -228,7 +229,7 @@ const NavBar = ({ setMode, mode }) => {
                 Resume
               </NavLink>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={handleClose}>
               <NavLink
                 to="/skills"
                 style={({ isActive }) => {

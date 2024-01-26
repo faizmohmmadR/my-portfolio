@@ -5,21 +5,11 @@ import { styled } from "@mui/system";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import "./home.css";
-
+import { containerVariants, itemVariants } from "../CommonStyle/CommonStyle";
 const RootContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(4),
 }));
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
 
 const Home = () => {
   return (

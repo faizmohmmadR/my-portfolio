@@ -2,11 +2,10 @@ import React from "react";
 import { Typography, Container, Box, TextField, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-
+import { containerVariants, itemVariants } from "../CommonStyle/CommonStyle";
 const RootContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(4),
-  height: "81vh",
 }));
 
 const Heading = styled(Typography)(({ theme }) => ({
@@ -30,16 +29,6 @@ const SubmitButton = styled(Button)(({ theme }) => ({
   width: "fit-content",
   marginTop: theme.spacing(2),
 }));
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
 
 const Contact = () => {
   const handleSubmit = (e) => {

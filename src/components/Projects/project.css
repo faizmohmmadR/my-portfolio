@@ -44,3 +44,10 @@
   text-transform: uppercase;
   padding: 15px;
 }
+
+.card-bacgroun-color {
+  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
+}
+.text-color {
+  color: white;
+}

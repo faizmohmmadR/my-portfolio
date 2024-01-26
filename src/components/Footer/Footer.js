@@ -19,16 +19,40 @@ const Footer = () => {
   let date = new Date();
   let year = date.getFullYear();
   return (
-    <Grid backgroundColor="#0a0416" padding={"10px"}>
+    <Grid container backgroundColor="#0a0416" padding={"10px"}>
       <RootContainer>
-        <Grid container spacing={4} textAlign={"center"}>
-          <Grid lg={4} md={4} sm={12} xs={12} padding={1} textAlign={"center"}>
+        <Grid container spacing={4} textAlign={"center"} alignItems={"center"}>
+          <Grid
+            item
+            lg={4}
+            md={4}
+            sm={12}
+            xs={12}
+            padding={1}
+            textAlign={"center"}
+          >
             Designed By Faiz Mohammad Rahmdel
           </Grid>
-          <Grid lg={4} md={4} sm={12} xs={12} padding={1} textAlign={"center"}>
+          <Grid
+            item
+            lg={4}
+            md={4}
+            sm={12}
+            xs={12}
+            padding={1}
+            textAlign={"center"}
+          >
             <h3>Copyright © {year} SB</h3>
           </Grid>
-          <Grid lg={4} md={4} sm={12} xs={12} padding={1} textAlign={"center"}>
+          <Grid
+            item
+            lg={4}
+            md={4}
+            sm={12}
+            xs={12}
+            padding={1}
+            textAlign={"center"}
+          >
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a

@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import "./index.css";
 import CombineHome from "./components/Home/CombineHome";
+import Detail from "./components/Projects/Detail";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ root.render(
           <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/detail/:id" element={<Detail />} />
         </Route>
       </Routes>
     </BrowserRouter>
