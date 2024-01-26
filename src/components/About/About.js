@@ -6,22 +6,13 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LocalAirportIcon from "@mui/icons-material/LocalAirport";
 // import SportsMartialArtsIcon from "@mui/icons-material/SportsMartialArts";
+import { containerVariants, itemVariants } from "../CommonStyle/CommonStyle";
 import FeedIcon from "@mui/icons-material/Feed";
 import { SkillsList } from "../Skills/SkillsList";
 const RootContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(2),
   paddingBottom: theme.spacing(4),
 }));
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
 
 const MyTypography = styled(Typography)({
   backgroundColor: "#F5F5F5",
@@ -40,7 +31,7 @@ const About = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants}>
-          <Grid item xs={12} md={8}>
+          <Grid item={true} xs={12} md={8}>
             <motion.div variants={itemVariants}>
               <Typography variant="h2" sx={{ marginBottom: "16px" }}>
                 Know Who <span style={{ color: "#87209e" }}> I'M</span>
@@ -52,7 +43,7 @@ const About = () => {
                 sx={{ marginBottom: "32px", lineHeight: 1.6, color: "white" }}
               >
                 Hi, I'm Faiz Mohammad Rahmdel from{" "}
-                <spam style={{ color: "#51e4d0" }}>Ghor Afghanistan</spam>, a
+                <span style={{ color: "#51e4d0" }}>Ghor Afghanistan</span>, a
                 frontend web engineer currently pursuing a degree in Computer
                 Science at Kandahar University. I am in my last semester and
                 have four years of experience in front-end development.
@@ -93,6 +84,7 @@ const About = () => {
               </Typography>
               <Grid container fontSize={"30px"}>
                 <Grid
+                  item={true}
                   xs={6}
                   sm={3}
                   padding={2}
@@ -103,6 +95,7 @@ const About = () => {
                   <Typography>Travelling</Typography>
                 </Grid>
                 <Grid
+                  item={true}
                   xs={6}
                   sm={3}
                   padding={2}
@@ -113,6 +106,7 @@ const About = () => {
                   <Typography>Playing Games</Typography>
                 </Grid>
                 <Grid
+                  item={true}
                   xs={6}
                   sm={3}
                   padding={2}
@@ -123,6 +117,7 @@ const About = () => {
                   <Typography>Studing</Typography>
                 </Grid>
                 <Grid
+                  item={true}
                   xs={6}
                   sm={3}
                   padding={2}

@@ -33,17 +33,40 @@ const Progress = ({ skill, value }) => {
   }, [value]);
   return (
     <StyledBox
-      sx={{ width: { xs: "95vw", sm: "100vw", md: "75vw", lg: "50vw" } }}
+      sx={{
+        width: { xs: "95vw", sm: "100vw", md: "75vw", lg: "50vw", xl: "50vw" },
+      }}
     >
-      <Typography color="#61dafb" sx={{ width: { xs: "35%", sm: "20%" } }}>
+      <Typography
+        color="white"
+        sx={{
+          width: { xs: "27%", sm: "17%", md: "20%", lg: "20%", xl: "13%" },
+        }}
+      >
         {skill}
       </Typography>
       <LinearProgress
         value={progress}
         variant="determinate"
-        sx={{ width: "75%", padding: "10px" }}
+        sx={{
+          width: { xs: "60%", sm: "60%", md: "60%", lg: "60%", xl: "23%" },
+          padding: "10px",
+        }}
       />
-      <Typography variant="body1" color="#07e237" ml={2} width="10%">
+      <Typography
+        variant="body1"
+        color="white"
+        ml={2}
+        sx={{
+          width: {
+            xs: "10%",
+            sm: "10%",
+            md: "10%",
+            lg: "10%",
+            xl: "3%",
+          },
+        }}
+      >
         {Math.ceil(progress)}%
       </Typography>
     </StyledBox>

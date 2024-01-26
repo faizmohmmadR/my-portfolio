@@ -98,15 +98,9 @@
   text-align: left;
 }
 
-.home-about-social {
-  text-align: center !important;
-  padding-top: 25px;
-  color: white !important;
-}
-
 .social-icons {
   display: inline-block !important;
-  padding-right: 15px;
+  padding-right: 20px;
   padding-left: 15px;
 }
 
@@ -131,3 +125,4 @@ html {
 .white-color {
   color: white;
 }
+

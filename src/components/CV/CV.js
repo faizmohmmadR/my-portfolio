@@ -1,24 +1,15 @@
-import { Box, Container, Paper } from "@mui/material";
+import { Box, Container, Paper, Typography } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import { containerVariants, itemVariants } from "../CommonStyle/CommonStyle";
 // import cv from "../../assets/images/cv/";
 
 const RootContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(4),
 }));
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
 
 const CV = () => {
   return (
@@ -29,13 +20,16 @@ const CV = () => {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants}>
+          <Typography textAlign="center" variant="h4">
+            My Resume
+          </Typography>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               alignItems: "center",
-              height: { xs: "73vh", sm: "95vh" },
+              height: { xs: "73vh", sm: "95vh", lg: "95vh" },
               color: "#61dafb",
             }}
           >
@@ -43,7 +37,7 @@ const CV = () => {
               component="iframe"
               src="/pdf/junior-front-end-developer.pdf"
               sx={{
-                height: { xs: "100vh", sm: "100%" },
+                height: { xs: "100vh", sm: "100%", lg: "100%" },
                 width: { xs: "100%", sm: "50%" },
               }}
             ></Paper>

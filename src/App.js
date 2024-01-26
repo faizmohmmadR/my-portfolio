@@ -1,7 +1,7 @@
 import { Box, ThemeProvider, createTheme } from "@mui/material";
 import React, { useState } from "react";
-import "./components/style/style.css";
-import "./components/Home/home.css";
+// import "./components/style/style.css";
+// import "./components/Home/home.css";
 // import NavBar from "./components/Home/NavBar";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/Home/NavBar";

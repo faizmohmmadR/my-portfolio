@@ -12,7 +12,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
+import { containerVariants, itemVariants } from "../CommonStyle/CommonStyle";
 const AvatarImage = styled(Avatar)(({ theme }) => ({
   width: theme.spacing(30),
   height: theme.spacing(30),
@@ -21,18 +21,8 @@ const AvatarImage = styled(Avatar)(({ theme }) => ({
 const RootContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(4),
-  marginTop: "15%",
+  marginTop: "5%",
 }));
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
 
 const Home2 = () => {
   return (
@@ -45,7 +35,6 @@ const Home2 = () => {
         <Grid
           container
           spacing={4}
-          lg={12}
           justifyContent="center"
           color={"#61dafb"}
           className="grid-center"
@@ -99,14 +88,14 @@ const Home2 = () => {
           </Grid>
         </Grid>
 
-        <Grid lg={12} textAlign={"center"} className="home-about-social">
-          <Typography variant="h4" paddingTop={2}>
+        <Grid item lg={12} textAlign={"center"}>
+          <Typography variant="h4" textAlign={"center"} paddingTop={2}>
             FIND ME ON
           </Typography>
-          <Typography pb={2}>
+          <Typography pb={2} mt={2}>
             Feel free to <span className="purple">connect </span>with me
           </Typography>
-          <ul className="home-about-social-links">
+          <ul style={{ marginRight: "25px" }}>
             <li className="social-icons">
               <a
                 href="https://github.com/faizmohmmadR"
