@@ -116,7 +116,7 @@ const Home2 = () => {
             </li>
             <li className="social-icons">
               <a
-                href="https://github.com/faizmohmmadR"
+                href="https://www.instagram.com/faizmohammadramdel/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -125,7 +125,7 @@ const Home2 = () => {
             </li>
             <li className="social-icons">
               <a
-                href="https://github.com/faizmohmmadR"
+                href="https://www.facebook.com/profile.php?id=100015165183602&mibextid=kFxxJD"
                 target="_blank"
                 rel="noreferrer"
               >
