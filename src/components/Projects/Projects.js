@@ -44,20 +44,20 @@ const Project = () => {
                 key={i}
                 sx={{ boxShadow: "0px 0px 12px #333" }}
               >
-                <Link
-                  to={`detail/${project.id}`}
-                  style={{ textDecoration: "none" }}
-                  title="For more images and information please click on"
+                <Card
+                  className="card-bacgroun-color"
+                  sx={{
+                    transitionProperty: "transform",
+                    transitionDuration: "1s",
+                    ":hover": {
+                      transform: "scale(1.1,1.1)",
+                    },
+                  }}
                 >
-                  <Card
-                    className="card-bacgroun-color"
-                    sx={{
-                      transitionProperty: "transform",
-                      transitionDuration: "1s",
-                      ":hover": {
-                        transform: "scale(1.1,1.1)",
-                      },
-                    }}
+                  <Link
+                    to={`detail/${project.id}`}
+                    style={{ textDecoration: "none" }}
+                    title="For more images and information please click on"
                   >
                     <CardMedia
                       component="img"
@@ -70,36 +70,39 @@ const Project = () => {
                       alt={project.title}
                       translate="test for as"
                     ></CardMedia>
-                    <CardContent
-                      className="text-color"
-                      sx={{
-                        height: { xl: "250px", lg: "30vh", xs: "30vh" },
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Box>
-                        <Typography variant="h5" color={"#61dafb"}>
-                          {project.title}
-                        </Typography>
-                        <Typography>
-                          {project.discriptin.length <= 150
-                            ? project.discriptin
-                            : `${project.discriptin.slice(0, 150)}...`}
-                        </Typography>
-                      </Box>
+                  </Link>
+                  <CardContent
+                    className="text-color"
+                    sx={{
+                      height: { xl: "250px", lg: "30vh", xs: "30vh" },
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Box>
+                      <Typography variant="h5" color={"#61dafb"}>
+                        {project.title}
+                      </Typography>
+                      <Typography>
+                        {project.discriptin.length <= 150
+                          ? project.discriptin
+                          : `${project.discriptin.slice(0, 150)}...`}
+                      </Typography>
+                    </Box>
 
-                      <Button
-                        variant="contained"
-                        sx={{ width: "8vw", backgroundColor: "#2b0b3a", mt: 1 }}
-                      >
-                        GitHub
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </Link>
+                    <Button
+                      variant="contained"
+                      sx={{ width: "8vw", backgroundColor: "#2b0b3a", mt: 1 }}
+                      component="a"
+                      href={project.githubLink}
+                      target="_blank"
+                    >
+                      GitHub
+                    </Button>
+                  </CardContent>
+                </Card>
               </Grid>
             ))}
           </Grid>
