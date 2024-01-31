@@ -42,6 +42,7 @@ export const ProjectsInfo = [
       { src: car_product },
       { src: car_user_profile },
     ],
+    githubLink: "https://github.com/faizmohmmadR/Car-Store.git",
   },
   {
     id: 2,
@@ -57,6 +58,7 @@ export const ProjectsInfo = [
       { src: dry_singup },
       { src: dry_add },
     ],
+    githubLink: "https://github.com/faizmohmmadR/Dry-Fruits-website.git",
   },
   {
     id: 3,
@@ -72,6 +74,7 @@ export const ProjectsInfo = [
       { src: plo_mobile1 },
       { src: plo_profile },
     ],
+    githubLink: "https://gitlab.com/sayedahmad.sahim/ploranzai.git",
   },
 
   {
@@ -81,5 +84,6 @@ export const ProjectsInfo = [
       "Introducing Afghan Tourism, a groundbreaking website dedicated to showcasing the spectacular beauty of Afghanistan's tourist destinations. Our mission is to create a comprehensive platform where tourists can explore and discover the hidden gems of this remarkable country. With a user-friendly interface built using React JS and MUI, Afghan Tourism offers a seamless browsing experience for both tourists and site owners.As a tourist, you can immerse yourself in the rich cultural heritage and breathtaking landscapes of Afghanistan by accessing our extensive database of registered places. From historical landmarks to natural wonders, our website provides a curated collection of must-visit destinationsBut Afghan Tourism is not just for tourists. We invite anyone with a deep appreciation for the beauty of Afghanistan to register their favorite places and contribute to our platform. By creating an account, you can easily showcase the wonders of your region and share valuable insights with fellow travelersOur team, with a primary focus on frontend development, has dedicated their expertise in React JS and MUI to create a visually captivating and user-friendly interface. We understand the importance of a seamless user experience, and our ongoing efforts ensure that navigating through Afghan Tourism is intuitive and enjoyableOn the backend, we utilize the power of Node.js to provide a robust and efficient infrastructure. This enables smooth registration, search, and retrieval of information, ensuring that tourists can easily access the details they need to plan their Afghan adventureJoin us on Afghan Tourism and embark on a virtual journey through the diverse landscapes and cultural wonders of Afghanistan. Whether you are a traveler seeking new experiences or a local passionate about sharing your heritage, our platform offers an inclusive space for discovery and connection. Witness the beauty of Afghanistan through the lens of Afghan Tourism and let us inspire your next unforgettable adventure.",
     image: turest_home,
     images: [{ src: turest_home }, { src: turest_page }, { src: turest_page1 }],
+    githubLink: "https://github.com/faizmohmmadR/Afghan-Turest-Website.git",
   },
 ];

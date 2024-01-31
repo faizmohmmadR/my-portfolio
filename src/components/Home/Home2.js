@@ -88,6 +88,11 @@ const Home2 = () => {
           </Grid>
         </Grid>
 
+        <Grid item lg={12} textAlign={"center"} mb={5}>
+          <Typography variant="h4" textAlign={"center"} paddingTop={2}>
+            My Completed project more than 10 project
+          </Typography>
+        </Grid>
         <Grid item lg={12} textAlign={"center"}>
           <Typography variant="h4" textAlign={"center"} paddingTop={2}>
             FIND ME ON
